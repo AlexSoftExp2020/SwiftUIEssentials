@@ -8,9 +8,16 @@
 import SwiftUI
 
 struct BooksView: View {
-    // @State private var oo = BooksOO()
+    @State private var oo = BooksOO()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List(oo.data) { datum in
+            Text(datum.name)
+        }
+        .font(.title)
+        .onAppear {
+            oo.fetch()
+        }
     }
 }
 
