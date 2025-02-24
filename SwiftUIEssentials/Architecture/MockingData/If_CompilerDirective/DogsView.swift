@@ -8,8 +8,15 @@
 import SwiftUI
 
 struct DogsView: View {
+    @State private var oo = DogsOO()
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List(oo.data) { datum in
+            Text(datum.name)
+        }
+        .font(.title)
+        .onAppear {
+            oo.fetch()
+        }
     }
 }
 
