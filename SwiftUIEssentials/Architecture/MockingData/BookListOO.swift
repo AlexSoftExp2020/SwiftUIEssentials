@@ -5,7 +5,7 @@
 //  Created by Oleksii on 24.02.2025.
 //
 
-import Foundation
+import SwiftUI
 
 @Observable
 class BookListOO {
