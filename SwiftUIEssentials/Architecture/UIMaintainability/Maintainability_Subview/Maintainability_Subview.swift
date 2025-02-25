@@ -14,8 +14,7 @@ struct Maintainability_Subview: View {
         List {
             Section {
                 ForEach(oo.data) { datum in
-                    rowView(datum.name)
-                        .listRowSeparator(.hidden)
+                    BookRowView(bookName: datum.name)
                 }
             } header: {
                 sectionHeaderView
@@ -36,17 +35,6 @@ struct Maintainability_Subview: View {
                 
             }
             .buttonStyle(.bordered)
-        }
-    }
-    
-    func rowView(_ bookName: String) -> some View {
-        GroupBox {
-            VStack {
-                Image(systemName: "book.pages")
-                Text(bookName)
-                    .font(.title)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-            }
         }
     }
 }
