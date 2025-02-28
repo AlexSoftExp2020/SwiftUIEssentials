@@ -12,11 +12,16 @@ struct StateWithTextField: View {
     
     var body: some View {
         VStack(spacing: 20) {
-            /*
-             HeaderView("State", subtitle: "Two-way binding", desc: "Add a dollar sign ($) before the variable name to create a two-way binding between a control and a state variable.", back: .blue, textColor: .white)
-             */
+            
+            HeaderView("State",
+                       subtitle: "Two-way binding",
+                       desc: "Add a dollar sign ($) before the variable name to create a two-way binding between a control and a state variable.",
+                       back: .blue,
+                       textColor: .white)
+            
             
             Spacer()
+            
             TextField("Enter name", text: $name)
                 .textFieldStyle(.roundedBorder)
                 .padding(.horizontal)

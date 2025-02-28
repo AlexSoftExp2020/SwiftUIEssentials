@@ -22,13 +22,13 @@ struct PropertyWrappers_Intro: View {
     
     var body: some View {
         VStack(spacing: 20) {
-            /*
-             HeaderView("PropertyWrappers"),
-             subtitle: "Introduction",
-             desc: "Property wrappers allow you to add the same logic to many properties.",
-             back: .blue,
-             textColor: .white)
-             */
+            
+            HeaderView("PropertyWrappers",
+                       subtitle: "Introduction",
+                       desc: "Property wrappers allow you to add the same logic to many properties.",
+                       back: .blue,
+                       textColor: .white)
+            
             Text("Old PIN: 1234")
             Text("New PIN: 567890")
             
@@ -37,7 +37,7 @@ struct PropertyWrappers_Intro: View {
                 newPin = "567890"
                 newPIN = newPin
             }
-
+            
             Text("Your New PIN: ") +
             Text(newPIN)
                 .bold()

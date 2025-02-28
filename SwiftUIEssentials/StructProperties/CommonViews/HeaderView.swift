@@ -36,12 +36,11 @@ struct HeaderView: View {
                 .foregroundColor(.gray)
             
             Text(desc)
-                .font(.body)
+                .font(.title2)
                 .frame(maxWidth: .infinity)
                 .foregroundColor(textColor)
                 .padding()
                 .background(back)
-                
         }
     }
 }

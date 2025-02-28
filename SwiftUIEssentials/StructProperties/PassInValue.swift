@@ -11,12 +11,13 @@ struct PassInValue: View {
     var name = "Mariana"
     var body: some View {
         VStack(spacing: 20) {
-            /*
-             HeaderView("State", subtitle: "Struct Variables",
-             desc: "Variables in structs are immutable. Mutable means a variable can change. Immutable means a variable can Not change.",
-             back: .blue,
-             textColor: .white)
-             */
+            
+            HeaderView("State",
+                       subtitle: "Struct Variables",
+                       desc: "Variables in structs are immutable. Mutable means a variable can change. Immutable means a variable can Not change.",
+                       back: .blue,
+                       textColor: .white)
+            
             Text("Name:")
             Text("\(name)")
                 .font(.largeTitle)

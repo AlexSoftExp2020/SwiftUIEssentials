@@ -12,12 +12,12 @@ struct BindingToState: View {
     
     var body: some View {
         VStack(spacing: 20) {
-            /*
-             HeaderView("State", subtitle: "Struct Variables",
-             desc: "Add @State before the variable to make it mutable.",
-             back: .blue,
-             textColor: .white)
-             */
+            
+            HeaderView("State",
+                       subtitle: "Struct Variables",
+                       desc: "Add @State before the variable to make it mutable.",
+                       back: .blue,
+                       textColor: .white)
             
             Button {
                 name = "MARK" // name is now mutable
