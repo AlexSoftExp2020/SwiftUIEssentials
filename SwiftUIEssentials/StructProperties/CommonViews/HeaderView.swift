@@ -9,11 +9,11 @@ import SwiftUI
 
 struct HeaderView: View {
     
-    var title: String
-    var subtitle: String
-    var desc: String
-    var back: Color
-    var textColor: Color
+    let title: String
+    let subtitle: String
+    let desc: String
+    let back: Color
+    let textColor: Color
     
     init(_ title: String, subtitle: String, desc: String, back: Color, textColor: Color) {
         self.title = title
