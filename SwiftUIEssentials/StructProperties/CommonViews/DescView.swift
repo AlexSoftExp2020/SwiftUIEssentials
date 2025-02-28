@@ -19,12 +19,14 @@ struct DescView: View {
     }
     
     var body: some View {
-        Text(description)
-            .font(.title2)
-            .frame(maxWidth: .infinity)
-            .foregroundColor(textColor)
-            .padding()
-            .background(back)
+        VStack {
+            Text(description)
+                .font(.title2)
+                .frame(maxWidth: .infinity, idealHeight: nil)
+                .foregroundColor(textColor)
+                .padding()
+                .background(back)
+        }.padding(.bottom)
     }
 }
 

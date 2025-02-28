@@ -36,7 +36,9 @@ struct StructVariables: View {
             
             Spacer()
             
-            //DescView("The name variable is read-only and cannot be updated.", back: .blue,  textColor: .whilte)
+            DescView("The name variable is read-only and cannot be updated.",
+                     back: .blue,
+                     textColor: .white)
         }
         .font(.title)
     }

@@ -32,11 +32,10 @@ struct StateWithTextField: View {
                 .fontWeight(.black)
             
             Spacer()
-            /*
-             DescView("A two-way binding means when the state variable is updated, the control gets updated. And when the control updates the value, the state variable gets updated.",
-             back: .blue,
-             textColor: .white)
-             */
+            
+            DescView("A two-way binding means when the state variable is updated, the control gets updated. And when the control updates the value, the state variable gets updated.",
+                     back: .blue,
+                     textColor: .white)
         }
         .font(.title)
     }
