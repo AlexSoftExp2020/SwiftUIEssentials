@@ -19,8 +19,29 @@ struct BindingToStateExamples {
 }
 
 struct StateBindingWithOtherViews: View {
+    @State private var examples = BindingToStateExamples()
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 20) {
+            HeaderView("State",
+                       subtitle: "Binding With Other Views",
+                       desc: "Here are some examples of binding with other views using a @State property.",
+                       back: .blue,
+                       textColor: .white)
+            Form {
+                ColorPicker("Color Picker", selection: $examples.color)
+                DatePicker(selection: $examples.date) { Text("Date") }
+                Slider(value: $examples.slider)
+                Stepper(value: $examples.stepper, in: 0...100) { Text("Value: \(examples.stepper)") }
+                
+                Text(examples.text)
+                TextField("Placeholder", text: $examples.textField)
+                    .textFieldStyle(.roundedBorder)
+                TextEditor(text: $examples.textEditor)
+                    .border(Color.blue)
+                Toggle("Toggle", isOn: $examples.toggle)
+            }
+        }
+        .font(.title)
     }
 }
 
