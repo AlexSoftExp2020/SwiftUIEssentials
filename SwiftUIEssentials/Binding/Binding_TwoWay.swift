@@ -37,3 +37,8 @@ struct EditNameSubview: View {
 #Preview {
     Binding_TwoWay()
 }
+
+#Preview("EditNameSubview", traits: .sizeThatFitsLayout) {
+    @State var name = "FirsName LastName"
+    return EditNameSubview(name: $name)
+}
