@@ -29,7 +29,7 @@ struct Binding_OneWay: View {
             TextField("name", text: $name)
                 .textFieldStyle(.roundedBorder)
             
-        // Namesubview
+            NameSubview(name: name)
         }
         .font(.title)
         .padding()
