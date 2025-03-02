@@ -8,8 +8,18 @@
 import SwiftUI
 
 struct Binding_TwoWay: View {
+    @State private var name = "Sean Ching"
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 20.0) {
+            Text("Two-Way Binding")
+                .font(.largeTitle.bold())
+            Text(name)
+            
+            EditNameSubview(name: $name)
+        }
+        .font(.title)
+        .padding()
     }
 }
 
