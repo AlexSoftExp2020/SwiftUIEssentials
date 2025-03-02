@@ -13,6 +13,17 @@ struct Binding_TwoWay: View {
     }
 }
 
+struct EditNameSubview: View {
+    @Binding var name: String
+    
+    var body: some View {
+        GroupBox("Subview") {
+            TextField("name", text: $name)
+                .textFieldStyle(.roundedBorder)
+        }
+    }
+}
+
 #Preview {
     Binding_TwoWay()
 }
