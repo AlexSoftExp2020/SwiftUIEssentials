@@ -8,8 +8,18 @@
 import SwiftUI
 
 struct Binding_List: View {
+    @State private var names = ["Mark", "Lem", "Rod"]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            List($names, id: \.self) { $name in
+                NavigationLink(name) {
+                    EditNameSubview(name: $name)
+                }
+            }
+            .font(.title)
+            .navigationTitle("Names")
+        }
     }
 }
 
