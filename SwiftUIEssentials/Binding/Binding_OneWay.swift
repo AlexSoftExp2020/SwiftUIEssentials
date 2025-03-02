@@ -7,6 +7,17 @@
 
 import SwiftUI
 
+struct NameSubview: View {
+    var name: String
+    
+    var body: some View {
+        GroupBox("Subview") {
+            Text(name)
+                .frame(maxWidth: .infinity)
+        }
+    }
+}
+
 struct Binding_OneWay: View {
     @State private var name = "Sean Ching"
     
