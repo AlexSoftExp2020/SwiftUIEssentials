@@ -8,8 +8,21 @@
 import SwiftUI
 
 struct State_Previewing: View {
+    // The @State properties would have to be public (not private)
+    @State var featureOne: Bool = true
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 20) {
+            HeaderView("State",
+                       subtitle: "Previewing",
+                       desc: "You can pass in variables in your Preview to test with different values.",
+                       back: .blue,
+                       textColor: .white)
+            
+            Toggle("Feature One", isOn: $featureOne)
+                .padding(.horizontal)
+        }
+        .font(.title)
     }
 }
 
