@@ -26,6 +26,10 @@ struct State_Previewing: View {
     }
 }
 
-#Preview {
-    State_Previewing()
+#Preview("Feature off", traits: .sizeThatFitsLayout) {
+    State_Previewing(featureOne: false)
+}
+
+#Preview("Feature on", traits: .sizeThatFitsLayout) {
+    State_Previewing(featureOne: true)
 }
