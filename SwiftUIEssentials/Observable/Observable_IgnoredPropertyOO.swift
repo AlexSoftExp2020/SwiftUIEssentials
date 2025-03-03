@@ -23,3 +23,13 @@ class Observable_IgnoredPropertyOO {
         footer = "Read all \(data.count) books!"
     }
 }
+
+struct Observable_IgnoredPropertyView: View {
+    var body: some View {
+        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Hello, world!@*/Text("Hello, world!")/*@END_MENU_TOKEN@*/
+    }
+}
+
+#Preview {
+    Observable_IgnoredPropertyView()
+}
