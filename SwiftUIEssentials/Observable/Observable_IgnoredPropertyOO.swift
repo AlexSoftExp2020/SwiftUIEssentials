@@ -7,12 +7,19 @@
 
 import SwiftUI
 
-struct Observable_IgnoredPropertyOO: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+class Observable_IgnoredPropertyOO {
+    var data = ["Book 1", "Book 2", "Book 3"]
+    var listName = "Book List"
+    
+    // Ignore changes
+    @ObservationIgnored var footer = "3 books"
+    
+    func makeViewUpdates() {
+        data.append("Book \(data.count + 1)")
+        footer = "\(data.count) books"
     }
-}
-
-#Preview {
-    Observable_IgnoredPropertyOO()
+    
+    func makeJustFooterUpdate() {
+        footer = "Read all \(data.count) books!"
+    }
 }
