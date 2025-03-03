@@ -8,12 +8,24 @@
 import SwiftUI
 
 class PersonClass {
-     var name = ""
+     var name = " "
 }
 
 struct Observable_OneWay: View {
+    private var personClass = PersonClass()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Button("Add Name") {
+                personClass.name = "Natalie Miles"
+            }
+            .buttonStyle(.borderedProminent)
+            
+            GroupBox("Name") {
+                Text(personClass.name)
+            }
+        }
+        .font(.title)
     }
 }
 
