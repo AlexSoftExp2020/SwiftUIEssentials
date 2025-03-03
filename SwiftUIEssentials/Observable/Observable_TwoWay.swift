@@ -13,8 +13,18 @@ class PersonClass_TwoWay {
 }
 
 struct Observable_TwoWay: View {
+    @State private var personClass = PersonClass()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            GroupBox("Name") {
+                TextField("name", text: $personClass.name)
+                    .textFieldStyle(.roundedBorder)
+                
+                Text(personClass.name)
+            }
+        }
+        .font(.title)
     }
 }
 
