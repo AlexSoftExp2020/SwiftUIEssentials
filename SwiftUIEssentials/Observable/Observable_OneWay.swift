@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@Observable // Solution
 class PersonClass {
      var name = " "
 }
