@@ -8,8 +8,20 @@
 import SwiftUI
 
 struct ObservableAndSubview_TwoWayView: View {
+    @State private var oo = ForecastOO()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            VStack {
+                EditableWeatherView(forecast: oo)
+                
+                Divider()
+                
+                Text(oo.sevenDays.map {$0.day}, format: .list(type: .and, width: .narrow))
+            }
+            .font(.title)
+            .navigationTitle("Weather")
+        }
     }
 }
 
