@@ -46,5 +46,6 @@ struct EditableWeatherView: View {
 }
 
 #Preview {
-    EditableWeatherView(forecast: ForecastOO())
+    @Previewable @State var oo = ForecastOO()
+    return EditableWeatherView(forecast: oo)
 }
