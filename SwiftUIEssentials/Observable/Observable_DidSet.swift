@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@Observable
 class PersonOO {
     var name = "" {
         willSet {
@@ -21,8 +22,16 @@ class PersonOO {
 }
 
 struct Observable_DidSet: View {
+    @State private var oo = PersonOO()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TextField("name", text: $oo.name)
+            .padding()
+            .background(oo.validationColor, in: .rect(cornerRadius: 8).stroke())
+            .padding()
+            .onChange(of: oo.name) { _, newValue in
+                oo.validationColor = newValue.isEmpty ? .red : .green
+            }
     }
 }
 
