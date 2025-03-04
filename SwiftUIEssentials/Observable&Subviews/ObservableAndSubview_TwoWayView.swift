@@ -16,3 +16,23 @@ struct ObservableAndSubview_TwoWayView: View {
 #Preview {
     ObservableAndSubview_TwoWayView()
 }
+
+struct EditableWeatherView: View {
+    @Bindable var forecast: ForecastOO
+    
+    var body: some View {
+        List($forecast.sevenDays) { $day in
+            Label {
+                TextField("Day", text: $day.day)
+                    .textFieldStyle(.roundedBorder)
+            } icon: {
+                Image(systemName: day.icon)
+            }
+        }
+        .tint(.pink)
+    }
+}
+
+#Preview {
+    EditableWeatherView(forecast: ForecastOO())
+}
