@@ -50,3 +50,18 @@ struct ObservableAndSubview_OneWayView: View {
 #Preview {
     ObservableAndSubview_OneWayView()
 }
+
+struct WeatherView: View {
+    var forecast: ForecastOO
+    
+    var body: some View {
+        List(forecast.sevenDays) { day in
+            Label(day.day, systemImage: day.icon)
+        }
+        .tint(.pink)
+    }
+}
+
+#Preview {
+    WeatherView(forecast: ForecastOO())
+}
