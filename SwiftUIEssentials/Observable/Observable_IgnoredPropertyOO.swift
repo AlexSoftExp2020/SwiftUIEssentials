@@ -25,8 +25,31 @@ class Observable_IgnoredPropertyOO {
 }
 
 struct Observable_IgnoredPropertyView: View {
+    @State private var oo = Observable_IgnoredPropertyOO()
+    
     var body: some View {
-        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Hello, world!@*/Text("Hello, world!")/*@END_MENU_TOKEN@*/
+        List {
+            Section {
+                ForEach(oo.data, id: \.self) { datum in
+                    Text(datum)
+                }
+            } header: {
+                Text(oo.listName)
+            } footer: {
+                Text(oo.footer)
+            }
+
+            Section {
+                Button("Update Data") {
+                    oo.makeViewUpdates()
+                }
+                Button("Update Just the Footer") {
+                    oo.makeJustFooterUpdate()
+                }
+            }
+        }
+        .font(.title)
+        .headerProminence(.increased)
     }
 }
 
