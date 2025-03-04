@@ -11,6 +11,11 @@ import SwiftUI
 class ForecastOO {
     var sevenDays = [Weather]()
     
+    struct Weather: Identifiable {
+        let id = UUID()
+        var day = ""
+        var icon = ""
+    }
 }
 
 struct ObservableAndSubview_OneWayView: View {
