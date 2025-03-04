@@ -41,8 +41,15 @@ struct ObservableAndSubview_OneWayView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                // Weather
+                WeatherView(forecast: oo)
+                
+                Button("Update") {
+                    oo.updateSunday()
+                }
+                .buttonStyle(.borderedProminent)
             }
+            .font(.title)
+            .navigationTitle("Weather")
         }
     }
 }
