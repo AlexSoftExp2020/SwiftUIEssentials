@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@Observable
 class Observable_IgnoredPropertyOO {
     var data = ["Book 1", "Book 2", "Book 3"]
     var listName = "Book List"
