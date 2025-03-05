@@ -8,10 +8,29 @@
 import SwiftUI
 
 struct AppStorage_Intro: View {
+    @AppStorage("username") var username = "Mark"
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            VStack(spacing: 20) {
+                HeaderView("",
+                           subtitle: "Introduction",
+                           desc: "You can use @AppStorage to store small amounts of data for your app.",
+                           back: .white,
+                           textColor: .black)
+                
+                Text("AppStorage: username")
+                Text("\(username)")
+                    .bold()
+                
+                NavigationLink("Edit", destination: AppStorage_Edit())
+            }
+            .font(.title)
+            .navigationTitle("App Storage")
+        }
     }
 }
+
 
 #Preview {
     AppStorage_Intro()
