@@ -12,7 +12,24 @@ struct AppStorage_Edit: View {
     @State private var newUsername = ""
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(spacing: 20) {
+            HeaderView("",
+                       subtitle: "Update AppStorage",
+                       desc: "To update AppStorage, just assign a new value to the variable",
+                       back: .orange,
+                       textColor: .black)
+            
+            Text("Enter a bew user name:")
+            TextField("new user name", text: $newUsername)
+                .textFieldStyle(.roundedBorder)
+                .padding(.horizontal)
+            
+            Button("Update") {
+                username = newUsername
+            }
+        }
+        .font(.title)
+        .navigationTitle("Update App Storage")
     }
 }
 
