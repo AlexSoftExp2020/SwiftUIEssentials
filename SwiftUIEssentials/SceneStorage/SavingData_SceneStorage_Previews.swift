@@ -20,3 +20,15 @@ struct SavingData_SceneStorage_Previews: PreviewProvider {
         }
     }
 }
+
+
+//MARK: What can yous store in @SceneStorage?
+/*
+ Just like @AppStorage, you can store:
+ - URL
+ - Int
+ - Bool
+ - Doublle
+ - String
+ - Data
+ */
