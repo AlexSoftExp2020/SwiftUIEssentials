@@ -17,6 +17,7 @@ struct SavingData_DataEntry: View {
                      back: .pink,
                      textColor: .black)
             .layoutPriority(1)
+            
             TextEditor(text: $textInput)
                 .border(Color.pink)
                 .padding()
@@ -24,6 +25,7 @@ struct SavingData_DataEntry: View {
             DescView("This data will not be saved because it's bound to a @State variable.",
                      back: .pink,
                      textColor: .black)
+            
             TextEditor(text: $stateText)
                 .border(Color.pink)
                 .padding()

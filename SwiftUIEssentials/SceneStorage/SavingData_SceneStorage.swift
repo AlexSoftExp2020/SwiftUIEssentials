@@ -18,6 +18,7 @@ struct SavingData_SceneStorage: View {
                            desc: "Use @SceneStorage to save data for just one screen that will persist for the lifetime of the app.",
                            back: .pink,
                            textColor: .black)
+                
                 NavigationLink("Enter New Data", destination: SavingData_DataEntry())
             }
             .font(.title)
