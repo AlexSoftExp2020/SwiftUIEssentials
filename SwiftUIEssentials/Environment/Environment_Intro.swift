@@ -14,7 +14,11 @@ class DeveloperOO {
 
 struct Environment_Intro: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            NavigationLink("View Developer") {
+                //TODO: DeveloperView()
+            }
+        }
     }
 }
 
