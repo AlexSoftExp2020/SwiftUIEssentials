@@ -7,12 +7,16 @@
 
 import SwiftUI
 
-struct SavingData_SceneStorage_Previews: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+struct SavingData_SceneStorage_Previews: PreviewProvider {
+    @SceneStorage("textInput") var textInput = "Preview Data"
 
-#Preview {
-    SavingData_SceneStorage_Previews()
+    static var previews: some View {
+        Group {
+            SavingData_SceneStorage()
+            
+            NavigationStack {
+                SavingData_DataEntry(textInput: "textInput", stateText: "stateText")
+            }
+        }
+    }
 }
