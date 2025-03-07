@@ -16,9 +16,12 @@ struct Environment_Intro: View {
     var body: some View {
         NavigationStack {
             NavigationLink("View Developer") {
-                //TODO: DeveloperView()
+                DeveloperView()
             }
+            .navigationTitle("Developer")
         }
+        .environment(DeveloperOO())
+        .font(.title)
     }
 }
 
