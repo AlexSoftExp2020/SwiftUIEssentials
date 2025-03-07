@@ -18,3 +18,23 @@ struct AppStorage_Intro_Previews: PreviewProvider {
         }
     }
 }
+
+//MARK: Alternative @AppStorage Initializers
+
+/*
+ @AppStorage("darkBackground") var darkBackground = false
+ @AppStorage(wrappedValue: false, "darkBackground") var darkBackground
+ */
+
+//MARK: @AppStorage Summary
+/*
+ 
+ Value types you can use with @AppStorage include:
+ String
+ Int
+ Bool
+ URL
+ Double
+ Data
+ 
+ */
