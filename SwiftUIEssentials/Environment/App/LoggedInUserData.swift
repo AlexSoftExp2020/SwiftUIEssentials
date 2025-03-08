@@ -14,3 +14,13 @@ class LoggedInUserData {
     var userName = ""
     var userToken = ""
 }
+
+
+//@Observable
+//class CustomerFriendsOO {
+//    var friends: [String] = []
+//    
+//    func fetch() {
+//        friends = Service().getFriends(userId: LoggedInUserData.shared.userId)
+//    }
+//}
