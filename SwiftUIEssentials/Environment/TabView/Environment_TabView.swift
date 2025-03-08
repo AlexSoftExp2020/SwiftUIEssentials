@@ -10,6 +10,11 @@ import SwiftUI
 struct Environment_TabView: View {
     var body: some View {
         TabView {
+            TabViewOne()
+                .tabItem {
+                    Image(systemName: "1.circle")
+                    Text("One")
+            }
             //MARK: TODO
         }
     }
