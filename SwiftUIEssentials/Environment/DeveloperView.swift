@@ -18,4 +18,6 @@ struct DeveloperView: View {
 
 #Preview {
     DeveloperView()
+        .environment(DeveloperOO())
+        .font(.title)
 }
