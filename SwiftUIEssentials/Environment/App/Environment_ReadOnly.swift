@@ -8,11 +8,24 @@
 import SwiftUI
 
 struct Environment_ReadOnly: View {
+    @Environment(AddressOO.self) private var addressOO
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Form {
+            // @Bindable var addressBindable = addressOO
+            Section("One-Way Binding") {
+                Text("State: \(addressOO.state)")
+                    .bold()
+            }
+            
+            Section("Two-Way Binding:") {
+                //TextField("Enter State", text: $addressOO.state) /* Cannot find $addressOO in scope */
+            }
+        }
+        .headerProminence(.increased)
     }
 }
 
 #Preview {
     Environment_ReadOnly()
+        .environment(AddressOO())
 }
