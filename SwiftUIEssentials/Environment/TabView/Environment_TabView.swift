@@ -15,8 +15,14 @@ struct Environment_TabView: View {
                     Image(systemName: "1.circle")
                     Text("One")
             }
-            //MARK: TODO
+            TabViewTwo()
+                .tabItem {
+                    Image(systemName: "2.circle")
+                    Text("Two")
+            }
         }
+        .environment(DeveloperOO())
+        .font(.title)
     }
 }
 
