@@ -8,11 +8,23 @@
 import SwiftUI
 
 struct TabViewTwo: View {
+    @Environment(DeveloperOO.self) var developerInfo
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text("Tab 2")
+                .font(.largeTitle)
+            Spacer()
+            Text("The name on Tab 1 is:")
+                .padding()
+            Text("\(developerInfo.name)")
+                .bold()
+            Spacer()
+        }
     }
 }
 
 #Preview {
     TabViewTwo()
+        .environment(DeveloperOO())
 }
