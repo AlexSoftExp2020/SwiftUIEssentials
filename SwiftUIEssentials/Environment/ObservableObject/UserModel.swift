@@ -10,5 +10,5 @@ import Foundation
 @Observable
 class UserModel {
     var username = "Ellen"
-    var showOnLine = true
+    var showAsOnLine = true
 }
