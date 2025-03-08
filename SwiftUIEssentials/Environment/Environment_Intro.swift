@@ -7,11 +7,6 @@
 
 import SwiftUI
 
-@Observable
-class DeveloperOO {
-    var name: String = "Awesome developer"
-}
-
 struct Environment_Intro: View {
     var body: some View {
         NavigationStack {
