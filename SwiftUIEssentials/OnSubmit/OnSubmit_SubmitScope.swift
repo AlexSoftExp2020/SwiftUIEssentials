@@ -8,8 +8,37 @@
 import SwiftUI
 
 struct OnSubmit_SubmitScope: View {
+    @State private var firstName = ""
+    @State private var lastName = ""
+    @State private var continueOnboarding = false
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            VStack(spacing: 0) {
+                HeaderView("",
+                           subtitle: "Submit Scope",
+                           desc: "Use submitScope modifier to prevent onSubmit.",
+                           back: .blue,
+                           textColor: .white)
+                
+                GroupBox("About You") {
+                    TextField("first name", text: $firstName)
+                        .submitScope()
+                    
+                    TextField("last name", text: $lastName)
+                        .submitLabel(.continue)
+                }
+                .textFieldStyle(.roundedBorder)
+                .onSubmit(of: .text) {
+                    continueOnboarding = true
+                }
+                .navigationDestination(isPresented: $continueOnboarding) {
+                    Text("Next Step")
+                }
+            }
+            .navigationTitle("onSubmit")
+        }
+        .font(.title)
     }
 }
 
