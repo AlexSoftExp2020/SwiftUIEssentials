@@ -13,7 +13,14 @@ class Json_DecodingOO {
     var jsonError: Error?
     
     func fetch() {
+        let jsonData = jsonString.data(using: .utf8)!
+        let decoder = JSONDecoder()
         
+        do {
+            user = try decoder.decode(Json_User.self, from: jsonData)
+        } catch {
+            jsonError = error
+        }
     }
 }
 
