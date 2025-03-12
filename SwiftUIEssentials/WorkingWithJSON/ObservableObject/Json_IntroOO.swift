@@ -25,3 +25,12 @@ var userJsonData = """
 "email": null
 }
 """
+
+//MARK: TODO
+/*
+ String
+ Int
+ Bool
+ Array
+ optional
+ */
