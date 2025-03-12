@@ -13,7 +13,12 @@ class Json_EnumsOO {
     var jsonError: Error?
     
     func fetch() {
-        //MARK: TODO
+        let jsonData = jsonCarData.data(using: .utf8)!
+        do {
+            carData = try JSONDecoder().decode(Json_Car.self, from: jsonData)
+        } catch {
+            jsonError = error
+        }
     }
 }
 
