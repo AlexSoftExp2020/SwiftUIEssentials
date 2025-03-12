@@ -16,3 +16,13 @@ class Json_DecodingOO {
         
     }
 }
+
+var jsonString = """
+{
+"name": "Max",
+"age": 28,
+"married": true,
+"pets": ["Rover", "Milo"],
+"email": null
+}
+"""
