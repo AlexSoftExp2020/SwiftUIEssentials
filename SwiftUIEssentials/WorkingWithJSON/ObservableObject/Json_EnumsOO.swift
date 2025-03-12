@@ -16,3 +16,10 @@ class Json_EnumsOO {
         //MARK: TODO
     }
 }
+
+var jsonCarData = """
+{
+"name": "Peugeot",
+"type": "foreign"
+}
+"""
