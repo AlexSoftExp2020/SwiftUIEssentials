@@ -15,3 +15,13 @@ class Json_IntroOO {
         data = userJsonData
     }
 }
+
+var userJsonData = """
+{
+"name": "Max",
+"age": 28,
+"married": true,
+"pets": ["Rover", "Milo"],
+"email": null
+}
+"""
