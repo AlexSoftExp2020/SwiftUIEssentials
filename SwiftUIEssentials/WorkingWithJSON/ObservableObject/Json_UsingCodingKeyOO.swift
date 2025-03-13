@@ -14,3 +14,21 @@ var jsonVegetableData = """
 "quantity": 10
 }
 """
+
+@Observable
+class Json_UsingCodingKeyOO {
+    var vegetable = Json_Vegetable()
+    var jsonError: Error?
+    
+    func fetch() {
+        let decoder = JSONDecoder()
+        
+        let jsonData = jsonVegetableData.data(using: .utf8)!
+        
+        do {
+            vegetable = try decoder.decode(Json_Vegetable.self, from: jsonData)
+        } catch {
+            jsonError = error
+        }
+    }
+}
