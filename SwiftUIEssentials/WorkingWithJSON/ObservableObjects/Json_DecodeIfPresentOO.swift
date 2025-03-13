@@ -5,7 +5,7 @@
 //  Created by Oleksii on 13.03.2025.
 //
 
-import Foundation
+import SwiftUI
 
 var jsonDrinkOrder1 = """
 {

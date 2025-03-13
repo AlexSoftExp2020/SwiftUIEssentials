@@ -18,6 +18,8 @@ struct DrinkOrder: Codable {
         case sugarCubes
     }
     
+    init() {}
+    
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: Keys.self)
         
