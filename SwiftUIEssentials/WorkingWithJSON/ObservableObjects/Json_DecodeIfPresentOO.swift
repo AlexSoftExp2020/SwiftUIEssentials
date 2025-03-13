@@ -14,3 +14,10 @@ var jsonDrinkOrder1 = """
     "sugarCubes": 2
 }
 """
+
+var jsonDrinkOrder2 = """
+{
+    "drink": "Latte",
+    "milk": null
+}
+"""
