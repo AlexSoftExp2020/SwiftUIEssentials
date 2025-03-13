@@ -18,3 +18,22 @@ var jsonTodoData = """
     ]
 }
 """
+
+@Observable
+class Json_DatesOO {
+    var todoList = Json_TodoList()
+    var jsonError: Error?
+    
+    func fetch() {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        
+        let jsonData = jsonTodoData.data(using: .utf8)!
+        
+        do {
+            todoList = try decoder.decode(Json_TodoList.self, from: jsonData)
+        } catch {
+            jsonError = error
+        }
+    }
+}
