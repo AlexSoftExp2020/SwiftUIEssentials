@@ -5,7 +5,7 @@
 //  Created by Oleksii on 13.03.2025.
 //
 
-import Foundation
+import SwiftUI
 
 var jsonFruitData = """
 {
@@ -13,3 +13,8 @@ var jsonFruitData = """
 "fruit_color": "Green"
 }
 """
+
+@Observable
+class Json_DecodingStrategyOO {
+    // var fruitInfo = Json_Fruit()
+}
