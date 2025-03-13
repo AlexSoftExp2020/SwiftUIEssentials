@@ -8,8 +8,29 @@
 import SwiftUI
 
 struct Json_DatesView: View {
+    @State private var oo = Json_DatesOO()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            HeaderView("JSON",
+                       subtitle: "Dates",
+                       desc: "Dates can come in different formats. You can specify a date decoding strategy to help with this.",
+                       back: .blue,
+                       textColor: .white)
+            List(oo.todoList.tasks) { task in
+                VStack(alignment: .leading) {
+                    Text(task.description)
+                    Text(task.dueDate.formatted())
+                        .font(.body)
+                        .foregroundStyle(.secondary)
+                }
+            }
+            Text(oo.jsonError?.localizedDescription ?? "")
+        }
+        .onAppear {
+            oo.fetch()
+        }
+        .font(.title)
     }
 }
 
