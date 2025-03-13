@@ -17,4 +17,15 @@ struct DrinkOrder: Codable {
         case milk
         case sugarCubes
     }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: Keys.self)
+        
+        // Values that are always present
+        self.drink = try container.decode(String.self, forKey: .drink)
+        self.milk = try container.decode(String?.self, forKey: .milk)
+        
+        // Values that are sometimes present
+        self.sugarCubes = try container.decodeIfPresent(Int.self, forKey: .sugarCubes) ?? 0
+    }
 }
