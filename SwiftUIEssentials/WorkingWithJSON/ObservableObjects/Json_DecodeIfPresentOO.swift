@@ -21,3 +21,19 @@ var jsonDrinkOrder2 = """
     "milk": null
 }
 """
+
+@Observable
+class Json_DecodeIfPresentOO {
+    var drinkOrder: DrinkOrder = DrinkOrder()
+    var jsonError: Error?
+    
+    func fetch() {
+        let jsonData = jsonDrinkOrder2.data(using: .utf8)!
+        
+        do {
+            drinkOrder = try JSONDecoder().decode(DrinkOrder.self, from: jsonData)
+        } catch {
+            jsonError = error
+        }
+    }
+}
