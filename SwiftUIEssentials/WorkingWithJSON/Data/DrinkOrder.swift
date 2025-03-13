@@ -11,4 +11,10 @@ struct DrinkOrder: Codable {
     var drink = ""
     var milk: String?
     var sugarCubes: Int = 0
+    
+    enum Keys: CodingKey {
+        case drink
+        case milk
+        case sugarCubes
+    }
 }
