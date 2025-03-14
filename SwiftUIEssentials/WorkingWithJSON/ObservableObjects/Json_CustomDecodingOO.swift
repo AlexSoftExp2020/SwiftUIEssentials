@@ -16,3 +16,19 @@ var jsonHouseData = """
     }
 }
 """
+
+@Observable
+class Json_CustomDecodingOO {
+    var houseData = Json_HouseData()
+    var jsonError: Error?
+    
+    func fetch() {
+        let jsonData = jsonHouseData.data(using: .utf8)!
+        
+        do {
+            houseData = try JSONDecoder().decode(Json_HouseData.self, from: jsonData)
+        } catch {
+            jsonError = error
+        }
+    }
+}
