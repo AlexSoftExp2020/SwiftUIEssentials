@@ -11,7 +11,7 @@ var jsonHouseData = """
 {
     "owner": "Emin Jacobsen",
     "address": {
-        "street": "123 Main St."
+        "street": "123 Main St.",
         "city": "Sundsvall"
     }
 }
