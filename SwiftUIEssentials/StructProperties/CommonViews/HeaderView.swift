@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct HeaderView: View {
+    var title = "Title"
+    var subtitle = "Subtitle"
+    var desc = "Use this to..."
+    var back = Color.orange
+    var textColor = Color.black
     
-    let title: String
-    let subtitle: String
-    let desc: String
-    let back: Color
-    let textColor: Color
-    
-    init(_ title: String, subtitle: String, desc: String, back: Color, textColor: Color) {
+    init(_ title: String, subtitle: String, desc: String,
+         back: Color = Color.orange, textColor: Color = Color.black) {
         self.title = title
         self.subtitle = subtitle
         self.desc = desc
@@ -24,31 +24,24 @@ struct HeaderView: View {
     }
     
     var body: some View {
-        VStack {
-            Text(title)
-                .font(.largeTitle)
-                .fontWeight(.light)
-                .foregroundStyle(.black)
-                .padding(.vertical)
+        VStack(spacing: 15) {
+            if !title.isEmpty {
+                Text(title)
+                    .font(.largeTitle)
+            }
             
             Text(subtitle)
-                .font(.title3)
-                .foregroundColor(.gray)
+                .foregroundStyle(.gray)
             
-            Text(desc)
-                .font(.title2)
-                .frame(maxWidth: .infinity)
-                .foregroundColor(textColor)
-                .padding()
-                .background(back)
+            DescView(desc, back: back, textColor: textColor)
         }
     }
 }
 
 #Preview {
-    HeaderView("State",
-               subtitle: "Two-way binding",
-               desc: "add decription",
-               back: .blue,
+    HeaderView("Title",
+               subtitle: "Subtitle",
+               desc: "What does what",
+               back: .green,
                textColor: .white)
 }
