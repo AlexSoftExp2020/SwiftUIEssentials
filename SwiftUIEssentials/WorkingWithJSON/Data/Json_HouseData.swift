@@ -13,8 +13,12 @@ struct Json_HouseData: Decodable {
     var city = ""
     
     enum CodingKeys: String, CodingKey {
-        case owner, address
+        case owner
+        case address
     }
     
-    
+    enum AddressKeys: String, CodingKey {
+        case street
+        case city
+    }
 }
