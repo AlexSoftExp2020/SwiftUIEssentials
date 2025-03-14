@@ -21,4 +21,18 @@ struct Json_HouseData: Decodable {
         case street
         case city
     }
+    
+    init() { }
+    
+    init(from decoder: Decoder) throws {
+        
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        owner = try container.decode(String.self, forKey: .owner)
+        
+        // Get the address
+        let address = try container.nestedContainer(keyedBy: AddressKeys.self, forKey: .address)
+        
+        street = try address.decode(String.self, forKey: .street)
+        city = try address.decode(String.self, forKey: .city)
+    }
 }
