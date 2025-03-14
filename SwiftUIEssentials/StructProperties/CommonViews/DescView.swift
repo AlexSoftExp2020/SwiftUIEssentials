@@ -8,25 +8,23 @@
 import SwiftUI
 
 struct DescView: View {
-    let description: String
-    let back: Color
-    let textColor: Color
+    var desc = "Use this to..."
+    var back = Color.orange
+    var textColor = Color.black
     
-    init(_ description: String, back: Color, textColor: Color) {
-        self.description = description
+    init(_ desc: String, back: Color = .orange,
+         textColor: Color = .black) {
+        self.desc = desc
         self.back = back
         self.textColor = textColor
     }
     
     var body: some View {
-        VStack {
-            Text(description)
-                .font(.title2)
-                .frame(maxWidth: .infinity, idealHeight: nil)
-                .foregroundColor(textColor)
-                .padding()
-                .background(back)
-        }.padding(.bottom)
+        Text(desc)
+            .frame(maxWidth: .infinity)
+            .padding()
+            .background(back)
+            .foregroundStyle(textColor)
     }
 }
 
